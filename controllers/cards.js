@@ -6,7 +6,7 @@ module.exports.addCard = (req, res) => {
     .then((card) => {
       Card.findById(card._id)
         .populate('owner')
-        .then(() => res.status(404).send({ message: 'Карточка не найдена' }));
+        .then(() => res.status(201).send({ message: 'Создано' }));
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
