@@ -39,7 +39,7 @@ module.exports.deleteCard = (req, res) => {
     res.status(400).send({ message: 'Некорректный id' });
   }
 };
-//dfdfd
+// dfdfd
 module.exports.likeCard = (req, res) => {
   if (req.params.cardId.length === 24) {
     Card.findByIdAndUpdate(req.params.cardId, { $addToSet: { likes: req.user._id } }, { new: true })
