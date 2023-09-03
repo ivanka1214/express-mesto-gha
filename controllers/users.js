@@ -44,7 +44,7 @@ module.exports.editUserData = (req, res) => {
         if (err.name === 'ValidationError') {
           res.status(400).send({ message: err.message });
         } else {
-          res.status(404).send({ message: 'Пользователь не найден' });
+          res.status(500).send({ message: 'Пользователь не найден' });
         }
       });
   } else {
@@ -60,7 +60,7 @@ module.exports.editUserAvatar = (req, res) => {
         if (err.name === 'ValidationError') {
           res.status(400).send({ message: err.message });
         } else {
-          res.status(404).send({ message: 'Пользователь не найден' });
+          res.status(500).send({ message: 'Пользователь не найден' });
         }
       });
   } else {
